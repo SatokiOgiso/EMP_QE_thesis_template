@@ -18,9 +18,5 @@ platex2pdf:
   -     ISO-2022-JP) KANJI="-kanji=jis";;
   - esac
   - PLATEX="platex"
-  - CLASS=`sed -n '/documentclass/p' $* | sed '/%.*documentclass/d' | sed -n '1p'`
-  - case $CLASS in
-  -     *{u*) PLATEX="uplatex";;
-  - esac
   - $PLATEX $KANJI $TEX # platex コマンドの発行
   - dvipdfmx $DVI # dvipdfmx コマンドの発行
