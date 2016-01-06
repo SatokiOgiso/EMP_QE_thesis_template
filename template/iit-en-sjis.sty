@@ -1,0 +1,82 @@
+﻿\setlength{\columnsep}{2zw}
+\def\eauthor#1{\def\@eauthor{#1}}
+\def\etitle#1{\gdef\@etitle{#1}}
+\def\advisors#1{\def\@advisors{#1}}
+\def\eadvisors#1{\def\@eadvisors{#1}}
+\def\abstract#1{\def\@abstract{#1}}
+\def\keywords#1{\def\@keywords{#1}}
+\def\authorheader#1{\def\@authorheader{#1}}
+\def\dateheader#1{\def\@dateheader{#1}}
+\def\ps@iitheader{%
+ \def\@oddfoot{\vspace{5mm} \hfil--\,\thepage\,--\hfil }
+  \def\@evenfoot{\vspace{5mm} \hfil--\,\thepage\,--\hfil }
+  \def\@oddhead{\vbox{
+      \hbox{
+      \hbox to 100mm{{\footnotesize 筑波大学大学院博士課程システム情報工学研究科修士論文(\@dateheader）\hfil}}
+      \hbox to 60 mm{{\footnotesize \hfil \@authorheader}}
+      }
+      \vspace{0.5mm}
+      \hbox{{\tiny - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -}}}
+  }
+}
+\pagestyle{iitheader}
+\setlength{\headsep}{6mm}
+
+
+%\makeatletter
+  \renewcommand{\@biblabel}[1]{#1) }
+  \def\@cite#1{\textsuperscript{\scriptsize{#1)}}}
+%\makeatother
+\def\figurename{Figure}
+\def\tablename{Table}
+%%%%%
+\def\lcaption#1{\renewcommand{\baselinestretch}{0.75}\caption{#1}}
+%%%%%
+
+
+\def\@maketitle{
+  \begin{flushleft}
+    %%% 論文題目：副題目
+    %---------------------------------------
+    %14pt
+    \vspace{-1zh}
+    \fbox{{ \Large Master of Engineering at the University of Tsukuba}}\\  
+    \vspace{1zh}
+           {\LARGE \bf \@etitle \\}
+           %12pt
+           \vspace{0.5zh}
+                  {\large \@title }
+                  \vspace{2zh}
+                  
+                  \begin{minipage}{160mm}
+                    \hspace{-1zw}
+                    \begin{tabular}{p{21zw} p{23zw}}
+                      {\large \@eauthor } & {\footnotesize Master's Program in Intelligent Interaction Technologies}\\
+                      {\large \@author} & {\footnotesize 知能機能システム専攻}\\
+                    \end{tabular}
+                    \vspace{0.5zh}
+                  \end{minipage}
+                  \begin{minipage}{160mm}
+                      \vbox{
+                      \hbox{\hspace{-1zw}{\@eadvisors}}
+                      \hbox{\hspace{-1zw}{\@advisors}}}
+                  \end{minipage}
+              
+                  \vspace{1zh}
+                  
+                  \begin{minipage}{163mm}
+                    \small
+                    \@abstract
+                    
+                    keywords: \@keywords
+                  \end{minipage}
+  \end{flushleft}
+  \vspace{1.5zh}
+}
+
+\makeatletter
+\def\section{\@startsection {section}{1}{\z@}{1zh}{.1pt}{\normalsize\bf}}
+\def\subsection{\@startsection {subsection}{1}{\z@}{1zh}{.1pt}{\normalsize}}
+\def\subsubsection{\@startsection {subsubsection}{1}{\z@}{1zh}{.1pt}{\normalsize}}
+\makeatother
+
