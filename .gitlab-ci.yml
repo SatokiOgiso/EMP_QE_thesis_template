@@ -1,0 +1,3 @@
+platex2pdf:
+  script:
+    - platex2pdf template.tex
