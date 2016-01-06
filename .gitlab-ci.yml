@@ -1,22 +1,4 @@
-before_script:
-  - apt-get -y install texlive # 本体
-  - apt-get -y install texlive-lang-cjk # 日本語版 (UTF8 対応)
-  - apt-get -y install xdvik-ja # プレビューを見るのに必要
-  - apt-get -y install dvipsk-ja # DVI から PostScript への変換用
-  - apt-get -y install gv #  Ghostscript 、 ps 形式の図を取り込んだ文書の作成用
-  - apt-get -y install texlive-fonts-recommended texlive-fonts-extra # TeX 用フ
 
 platex2pdf:
   script:
-  - TEX=template.tex
-  - DVI=`/usr/bin/basename "$TEX" ".tex"`
-  - THECODE=`nkf -g "$TEX"`
-  - case $THECODE in # nkf が返す文字コードにあわせる
-  -     UTF-8) KANJI="-kanji=utf8";;
-  -     EUC-JP) KANJI="-kanji=euc";;
-  -     Shift-JIS) KANJI="kanji=sjis";;
-  -     ISO-2022-JP) KANJI="-kanji=jis";;
-  - esac
-  - PLATEX="platex"
-  - $PLATEX $KANJI $TEX # platex コマンドの発行
-  - dvipdfmx $DVI # dvipdfmx コマンドの発行
+  - platex2pdf template.tex
