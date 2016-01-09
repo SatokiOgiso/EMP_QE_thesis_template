@@ -11,13 +11,11 @@
 	%
 	% This restriction helps ensure that all standard styles are identical.
 	% The file jbtxbst.doc has the documentation for this style.
-	%
-	% Please notify Shouichi MATSUI(matsui@denken.or.jp) of any bugs in
-	% these standard styles or in this documentation file.
 
 
-
-
+	% The description above is that of the original bst file(junsrt.bib)
+	% If you have noticed any bugs or questions, 
+	% please inform me on github(https://github.com/SatokiOgiso/EMP_QE_thesis_template).
 
 
 
